@@ -1,0 +1,48 @@
+.card {
+    text-align: center;
+    background-color: #191919;
+    padding: 12px;
+    border-radius: 10px;
+    width: 40%;
+}
+
+.card + .card {
+    margin-top: 20px;
+}
+
+.heading {
+    margin-bottom: 1rem;
+}
+
+.heading--main {
+    font-size: 2rem;
+    letter-spacing: 7px;
+}
+
+.heading--sub {
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+.comment {
+    background-color: #1F1B24;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.973);
+}
+
+.btn:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
+}
