@@ -4,6 +4,7 @@ import Card from "./components/Card";
 import comments from './data.js'
 import quote from './fightClub.js';
 
+
 const App = () => {
 
   return (

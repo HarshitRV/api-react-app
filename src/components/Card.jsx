@@ -26,7 +26,7 @@ const Card = (props) => {
             </div>
         </div>
         <div className="comment">{reply}</div>
-        <button onClick={clickHandler} className="btn">Refresh</button>
+        <button onClick={props.onRefresh?.() || clickHandler} className="btn">Refresh</button>
         </div>
     );
 };
