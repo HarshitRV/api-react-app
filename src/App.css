@@ -1,11 +1,13 @@
 .app {
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  background-color: #332940;
+  background: linear-gradient(
+        #8e0e00,
+        #1f1c18
+    );
   color: #fff;
   border-radius: 10px;
 }

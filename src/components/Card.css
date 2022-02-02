@@ -1,6 +1,8 @@
 .card {
     text-align: center;
-    background-color: #191919;
+    background: rgba(0, 0, 0, 0.568);
+    background-size: cover;
+    background-position: 110px;
     padding: 12px;
     border-radius: 10px;
     width: 40%;
@@ -25,7 +27,7 @@
 }
 
 .comment {
-    background-color: #1F1B24;
+    background: #0e0d0d25;
     padding: 1.5rem;
     border-radius: 10px;
     margin-bottom: 1rem;

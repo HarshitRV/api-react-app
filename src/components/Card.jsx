@@ -1,34 +1,25 @@
-import React, {useState} from 'react';
 import "./Card.css";
+import useFetch from "./useFetch";
 
 const Card = (props) => {
+  const { data: quote, loading, error, refetch } = useFetch(props.apiLink);
 
-    const apiData = props.data;
-    let randomNum = Math.trunc(Math.random() * apiData.length);
-    let randomData = apiData[randomNum].sarcasm
+  if (loading) console.log("Loading...");
 
-    const [reply, setComment] = useState(props.reply);
+  if (error) console.log(error);
 
-    console.log(reply);
-
-    const clickHandler = () => {
-        randomNum = Math.trunc(Math.random() * apiData.length);
-        randomData = apiData[randomNum].sarcasm || apiData[randomNum].quote;
-        setComment(randomData);
-    }
-
-    return (
-        <div className="card">
-        <div className="heading">
-            <div className="heading--main">{props.heading}</div>
-            <div className="heading--sub">
-                {props.subheading}
-            </div>
-        </div>
-        <div className="comment">{reply}</div>
-        <button onClick={props.onRefresh?.() || clickHandler} className="btn">Refresh</button>
-        </div>
-    );
+  return (
+    <div className="card">
+      <div className="heading">
+        <div className="heading--main">{props.heading}</div>
+        <div className="heading--sub">{props.subheading}</div>
+      </div>
+      <div className="comment">{quote?.sarcasm || quote?.quote}</div>
+      <button onClick={refetch} className="btn">
+        Refresh
+      </button>
+    </div>
+  );
 };
 
 export default Card;
