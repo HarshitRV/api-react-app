@@ -1,6 +1,7 @@
 import "./Card.css";
 import useFetch from "./useFetch";
 
+
 const Card = (props) => {
   const { data: quote, loading, error, refetch } = useFetch(props.apiLink);
 
@@ -9,15 +10,13 @@ const Card = (props) => {
   if (error) console.log(error);
 
   return (
-    <div className="card">
-      <div className="heading">
-        <div className="heading--main">{props.heading}</div>
-        <div className="heading--sub">{props.subheading}</div>
+    <div style = {{backgroundImage: `url(${props.img})`}} className="card card__1 col">
+      <div className="quote"><span>{quote?.sarcasm || quote?.quote}</span></div>
+      <div onClick={refetch} className="btn">
+        <a href="#no-where">
+          Refresh
+        </a>
       </div>
-      <div className="comment">{quote?.sarcasm || quote?.quote}</div>
-      <button onClick={refetch} className="btn">
-        Refresh
-      </button>
     </div>
   );
 };

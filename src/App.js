@@ -3,20 +3,27 @@ import Card from "./components/Card";
 
 const App = () => {
 
+  const data = [
+    {
+      img: "https://i.imgur.com/C0C1Y3T.jpeg",
+      apiLink: "https://sarcasm-api.herokuapp.com/",
+    },
+    {
+      img: "https://i.imgur.com/U83RsVZ.jpeg",
+      apiLink: "https://fightclub-api.herokuapp.com/",
+    },
+  ]
+
   return (
-    <div>
-      <div className="app">
-        <Card 
-        apiLink="https://sarcasm-api.herokuapp.com"
-        heading="sarcasm-API" 
-        subheading="Can I interest you in a sarcastic comment?
-        "/>  
-         <Card 
-        apiLink="https://api.kanye.rest/"
-        heading="kanye.REST-API" 
-        subheading="Kanye Says...
-        "/>       
-      </div>
+    <div className="container row">
+      <Card
+      img = {data[0].img}
+      apiLink = {data[0].apiLink}
+      />
+      <Card
+      img = {data[1].img}
+      apiLink = {data[1].apiLink}
+      />
     </div>
   );
 };
